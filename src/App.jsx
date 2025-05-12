@@ -13,7 +13,7 @@ function App() {
       <ul>
         {data.map((item, i) => (
           <li key={i}>
-            {item.name}: {item.date}
+            {item.name}: {item.date}, {item.durability}
           </li>
         ))}
       </ul>
