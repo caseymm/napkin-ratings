@@ -1,34 +1,50 @@
-name: Build and Deploy
+name: Deploy on push || data.json change
 
 on:
   push:
-    paths:
-      - "src/data.json"
-      - "src/**"
-      - "public/**"
   workflow_dispatch:
   schedule:
-    - cron: "0 * * * *" # Every hour (UTC)
+    - cron: "0 * * * *" # Every hour on the hour (UTC)
 
 jobs:
-  build-and-deploy:
+  check-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Setup Node
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # we need one commit back for diff check
+
+      - name: Get Changed Files
+        id: changes
+        run: |
+          if git diff --quiet HEAD^ HEAD src/data.json; then
+            echo "no_change=true" >> $GITHUB_OUTPUT
+          else
+            echo "no_change=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Skip if No Changes on Scheduled Run
+        if: github.event_name == 'schedule' && steps.changes.outputs.no_change == 'true'
+        run: echo "No data.json change detected — skipping build"
+
+      - name: Setup Node.js
+        if: github.event_name != 'schedule' || steps.changes.outputs.no_change == 'false'
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install Dependencies
+        if: github.event_name != 'schedule' || steps.changes.outputs.no_change == 'false'
         run: npm ci
 
       - name: Build
+        if: github.event_name != 'schedule' || steps.changes.outputs.no_change == 'false'
         run: npm run build
 
       - name: Deploy to GitHub Pages
+        if: github.event_name != 'schedule' || steps.changes.outputs.no_change == 'false'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
