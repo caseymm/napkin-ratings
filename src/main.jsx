@@ -7,8 +7,8 @@ import Map from "./map.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <p>test</p>
-    {/* <App /> */}
-    <Map />
+    <h1>Napkin Ratings</h1>
+    <App />
+    {/* <Map /> */}
   </StrictMode>
 );
