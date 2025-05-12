@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/napkin-ratings/", // IMPORTANT: github repo name
+  base: "/", // IMPORTANT: github repo name OR just "/" if custom domain
   plugins: [react()],
 });
