@@ -18,5 +18,17 @@
     "size": 2,
     "notes": "These napkins are not good!",
     "date": "2025-05-12"
+  },
+  {
+    "name": "JM's Example 3",
+    "location": "https://maps.app.goo.gl/o9RWvygRVQxyBPJp7",
+    "durability": 2,
+    "absorbency": 3,
+    "texture": 2,
+    "size": 2,
+    "effectiveness", 1
+    "appearance", 3
+    "notes": "These napkins are just 'meh'",
+    "date": "2025-05-12"
   }
 ]
