@@ -3,7 +3,14 @@ import "./App.scss";
 import data from "./data.json";
 
 function App() {
-  const attributes = ["durability", "absorbency", "texture", "size"];
+  const attributes = [
+    "durability",
+    "absorbency",
+    "texture",
+    "size",
+    "effectiveness",
+    "appearance",
+  ];
 
   const OverallStars = ({ item }) => {
     let total = 0;
@@ -12,7 +19,7 @@ function App() {
     });
     return (
       <div>
-        ({total / attributes.length})
+        ({(total / attributes.length).toFixed(2)})
         {Array.from({ length: 5 }).map((_, i) => (
           <span key={i}>
             {i < Math.round(total / attributes.length) ? "★" : "✩"}
