@@ -58,7 +58,9 @@ function App() {
       <div className="list">
         {data.map((item, i) => (
           <div key={i} className="card">
-            <p>{item.name}</p>
+            <p>
+              <a href={item.location}>{item.name}</a>
+            </p>
             <p>{dayjs(item.date).format("MMMM D, YYYY")}</p>
             <OverallStars item={item} />
             <hr></hr>

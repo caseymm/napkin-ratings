@@ -1,6 +1,9 @@
+html {
+  overflow: hidden;
+}
 body {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  width: 100%;
+  width: calc(100% - 60px);
   background-color: #ffffff;
   line-height: 1.5;
   padding-left: 20px;
@@ -36,6 +39,9 @@ h3 {
     width: 100%;
     max-width: 300px;
     margin-bottom: 40px;
+    @media only screen and (max-width: 500px) {
+      max-width: 100%;
+    }
     .sublist {
       display: flex;
       flex-direction: row;
