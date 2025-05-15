@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
+import dayjs from "dayjs";
 import data from "./data.json";
 
 function App() {
@@ -18,14 +19,14 @@ function App() {
       total += item[attr];
     });
     return (
-      <div>
+      <p>
         ({(total / attributes.length).toFixed(2)})
         {Array.from({ length: 5 }).map((_, i) => (
           <span key={i}>
-            {i < Math.round(total / attributes.length) ? "★" : "✩"}
+            {i < Math.round(total / attributes.length) ? "★" : "☆"}
           </span>
         ))}
-      </div>
+      </p>
     );
   };
 
@@ -33,31 +34,38 @@ function App() {
     return (
       <div>
         {attributes.map((attr) => (
-          <p key={attr} className="sublist">
-            {attr.charAt(0).toUpperCase() + attr.slice(1)}:{" "}
-            {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i}>{i < item[attr] ? "★" : "✩"}</span>
-            ))}
-          </p>
+          <div key={attr} className="sublist">
+            <div>{attr.charAt(0).toUpperCase() + attr.slice(1)}: </div>
+            <div>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i}>{i < item[attr] ? "★" : "☆"}</span>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     );
   };
 
+  data.sort(function (a, b) {
+    return new Date(b.date) - new Date(a.date);
+  });
+
   return (
     <>
       <h3>Latest</h3>
-      {/* ★☆ */}
-      <ul>
+      {/* ☆✩⭑⭒⭐︎ */}
+      <div className="list">
         {data.map((item, i) => (
-          <li key={i}>
+          <div key={i} className="card">
             <p>{item.name}</p>
-            <p>{item.date}</p>
+            <p>{dayjs(item.date).format("MMMM D, YYYY")}</p>
             <OverallStars item={item} />
+            <hr></hr>
             <StarRatings item={item} />
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </>
   );
 }
