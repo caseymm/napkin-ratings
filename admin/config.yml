@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: caseymm/napkin-ratings
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "entries"
+    label: "Entries"
+    folder: "src/content/entries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Effectiveness", name: "effectiveness", widget: "number" }
+      - { label: "Image", name: "image", widget: "image" }
