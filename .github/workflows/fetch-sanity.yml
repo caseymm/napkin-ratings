@@ -30,9 +30,21 @@ jobs:
           SANITY_DATASET: ${{ secrets.SANITY_DATASET }}
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
 
-      - name: Commit if changed
+      - name: Commit if changed or new
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/ratings.json
-          git diff --quiet && echo "No changes" || (git commit -m "Update ratings.json" && git push)
+
+          if git diff --cached --quiet; then
+            if git ls-files --others --exclude-standard | grep -q '^data/ratings.json$'; then
+              echo "Untracked file found, committing."
+              git commit -m "Add initial ratings.json"
+              git push
+            else
+              echo "No changes"
+            fi
+          else
+            git commit -m "Update ratings.json"
+            git push
+          fi
