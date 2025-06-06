@@ -3,6 +3,10 @@ import path from "path";
 import { fileURLToPath } from "url";
 import sanityClient from "@sanity/client";
 
+// Define __dirname since it's not available in ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // Set up Sanity client
 const client = sanityClient({
   projectId: process.env.SANITY_PROJECT_ID,
