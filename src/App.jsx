@@ -1,9 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.scss";
 import dayjs from "dayjs";
 import data from "./data.json";
+import { client } from "./lib/sanity";
 
 function App() {
+  const [ratings, setRatings] = useState([]);
+  useEffect(() => {
+    client
+      .fetch(
+        `*[_type == "rating"]{
+            name,
+            location,
+            description,
+            durability,
+            absorbency,
+            texture,
+            size,
+            effectiveness,
+            appearance,
+            notes,
+            date,
+            "imageUrl": image.asset->url
+          }`
+      )
+      .then((data) => setRatings(data));
+  }, []);
+
   const attributes = [
     "durability",
     "absorbency",
@@ -53,6 +76,30 @@ function App() {
 
   return (
     <>
+      {ratings.map((rating, index) => (
+        <div key={index}>
+          <h2>{rating.name}</h2>
+          <p>{rating.description}</p>
+          <img src={rating.imageUrl} alt={rating.name} width={200} />
+          <ul>
+            <li>Durability: {rating.durability}</li>
+            <li>Absorbency: {rating.absorbency}</li>
+            <li>Texture: {rating.texture}</li>
+            <li>Size: {rating.size}</li>
+            <li>Effectiveness: {rating.effectiveness}</li>
+            <li>Appearance: {rating.appearance}</li>
+          </ul>
+          <p>
+            <strong>Notes:</strong> {rating.notes}
+          </p>
+          <p>
+            <strong>Date:</strong> {rating.date}
+          </p>
+          <a href={rating.location} target="_blank" rel="noopener noreferrer">
+            View Location
+          </a>
+        </div>
+      ))}
       <h3>Latest</h3>
       {/* ☆✩⭑⭒⭐︎ */}
       <div className="list">
