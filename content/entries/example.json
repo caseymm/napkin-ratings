@@ -1,3 +1,5 @@
 {
-  "key": "value"
+  "name": "test",
+  "effectiveness": 3,
+  "image": ""
 }
