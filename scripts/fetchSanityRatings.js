@@ -1,6 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const sanityClient = require("@sanity/client");
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import sanityClient from "@sanity/client";
 
 // Set up Sanity client
 const client = sanityClient({
