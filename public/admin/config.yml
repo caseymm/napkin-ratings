@@ -3,7 +3,7 @@ backend:
   repo: caseymm/napkin-ratings
   branch: main
   base_url: https://code-frosty-cherry-3030.fly.dev
-  auth_scope: "auth"
+  auth_endpoint: auth
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
