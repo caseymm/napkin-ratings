@@ -1,5 +1,19 @@
 [
   {
+    "absorbency": null,
+    "appearance": null,
+    "date": null,
+    "description": null,
+    "durability": null,
+    "effectiveness": null,
+    "imageUrl": null,
+    "location": null,
+    "name": "222",
+    "notes": null,
+    "size": null,
+    "texture": null
+  },
+  {
     "absorbency": 2,
     "appearance": 1,
     "date": "2025-06-06",
