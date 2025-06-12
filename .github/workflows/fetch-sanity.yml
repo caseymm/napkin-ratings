@@ -6,10 +6,10 @@ permissions:
 on:
   schedule:
     - cron: "0 * * * *" # every hour
-  workflow_dispatch: # allow manual trigger
+  workflow_dispatch:
 
 jobs:
-  fetch:
+  fetch-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -31,6 +31,7 @@ jobs:
           SANITY_API_TOKEN: ${{ secrets.SANITY_API_TOKEN }}
 
       - name: Commit if changed or new
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -38,13 +39,27 @@ jobs:
 
           if git diff --cached --quiet; then
             if git ls-files --others --exclude-standard | grep -q '^data/ratings.json$'; then
-              echo "Untracked file found, committing."
+              echo "🟡 Untracked file found, committing."
               git commit -m "Add initial ratings.json"
               git push
+              echo "should_deploy=true" >> $GITHUB_OUTPUT
             else
-              echo "No changes"
+              echo "🟢 No changes to commit."
+              echo "should_deploy=false" >> $GITHUB_OUTPUT
             fi
           else
+            echo "🟠 Changes found in tracked file, committing."
             git commit -m "Update ratings.json"
             git push
-          fi
+            echo "should_deploy=true" >> $GITHUB_OUTPUT
+
+      - name: Build
+        if: steps.commit.outputs.should_deploy == 'true'
+        run: npm run build
+
+      - name: Deploy
+        if: steps.commit.outputs.should_deploy == 'true'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
