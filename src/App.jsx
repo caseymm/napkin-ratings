@@ -5,17 +5,12 @@ import data from "./ratings.json";
 
 function App() {
   const attributes = [
-    // "name",
-    // "date",
-    "description",
-    // "imageUrl",
     "durability",
     "absorbency",
     "texture",
     "size",
     "effectiveness",
     "appearance",
-    // "notes"
   ];
 
   const OverallStars = ({ item }) => {
@@ -70,7 +65,8 @@ function App() {
             <OverallStars item={item} />
             <hr></hr>
             <StarRatings item={item} />
-            <img src={item.name} />
+            <p>{item.description}</p>
+            <img src={item.imageUrl} />
           </div>
         ))}
       </div>
