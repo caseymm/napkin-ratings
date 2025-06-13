@@ -1,0 +1,30 @@
+[
+  {
+    "absorbency": null,
+    "appearance": null,
+    "date": null,
+    "description": null,
+    "durability": null,
+    "effectiveness": null,
+    "imageUrl": null,
+    "location": null,
+    "name": "test 222",
+    "notes": null,
+    "size": null,
+    "texture": null
+  },
+  {
+    "absorbency": 2,
+    "appearance": 1,
+    "date": "2025-06-06",
+    "description": "sfsf. akjbnwe.",
+    "durability": 3,
+    "effectiveness": 3,
+    "imageUrl": "https://cdn.sanity.io/images/c1ywbxqh/production/4aa471d3c346add564d5eaa11b652e44de4076ee-336x297.png",
+    "location": "https://maps.app.goo.gl/o9RWvygRVQxyBPJp7",
+    "name": "Test 1",
+    "notes": "bwgvbe notes",
+    "size": 5,
+    "texture": 5
+  }
+]
