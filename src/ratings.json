@@ -1,19 +1,5 @@
 [
   {
-    "absorbency": null,
-    "appearance": null,
-    "date": null,
-    "description": null,
-    "durability": null,
-    "effectiveness": null,
-    "imageUrl": null,
-    "location": null,
-    "name": "test 222",
-    "notes": null,
-    "size": null,
-    "texture": null
-  },
-  {
     "absorbency": 2,
     "appearance": 1,
     "date": "2025-06-06",
@@ -26,19 +12,5 @@
     "notes": "bwgvbe notes",
     "size": 5,
     "texture": 5
-  },
-  {
-    "absorbency": 4,
-    "appearance": 1,
-    "date": "2025-06-12",
-    "description": "description",
-    "durability": 5,
-    "effectiveness": 4,
-    "imageUrl": null,
-    "location": null,
-    "name": "test",
-    "notes": null,
-    "size": 2,
-    "texture": 4
   }
 ]
