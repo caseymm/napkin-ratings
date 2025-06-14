@@ -49,11 +49,11 @@ async function resolveRedirectAndFetchCoords(name, url) {
 async function main() {
   const results = [];
 
-  for (const { id, location } of data) {
-    console.log(`Processing: ${id}`);
-    const coords = await resolveRedirectAndFetchCoords(id, location);
+  for (const { ratingId, location } of data) {
+    console.log(`Processing: ${ratingId}`);
+    const coords = await resolveRedirectAndFetchCoords(ratingId, location);
     if (coords) {
-      results.push({ id, ...coords });
+      results.push({ ratingId, ...coords });
     }
   }
 
