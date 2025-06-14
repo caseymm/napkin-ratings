@@ -18,6 +18,7 @@ const client = sanityClient({
 
 // GROQ query
 const query = `*[_type == "rating"]{
+  ratingId,
   name,
   location,
   description,
