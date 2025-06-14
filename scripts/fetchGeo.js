@@ -1,7 +1,7 @@
 import fs from "fs";
 import fetch from "node-fetch";
 
-const data = JSON.parse(fs.readFileSync("../src/ratings.json", "utf-8"));
+const data = JSON.parse(fs.readFileSync("src/ratings.json", "utf-8"));
 
 function extractLatLngFromString(str) {
   const match = str.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
