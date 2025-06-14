@@ -16,6 +16,7 @@
     "@sanity/client": "^7.5.0",
     "dayjs": "^1.11.13",
     "maplibre-gl": "^5.5.0",
+    "node-fetch": "^3.3.2",
     "pmtiles": "^4.3.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
