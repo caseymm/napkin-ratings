@@ -1,44 +1,16 @@
 [
   {
-    "absorbency": 2,
-    "appearance": 1,
-    "date": "2025-06-06",
-    "description": "sfsf. akjbnwe.",
-    "durability": 3,
-    "effectiveness": 3,
-    "imageUrl": "https://cdn.sanity.io/images/c1ywbxqh/production/4aa471d3c346add564d5eaa11b652e44de4076ee-336x297.png",
-    "location": "https://maps.app.goo.gl/o9RWvygRVQxyBPJp7",
-    "name": "Test 1",
-    "notes": "bwgvbe notes",
-    "size": 5,
-    "texture": 5
-  },
-  {
-    "absorbency": null,
-    "appearance": null,
-    "date": null,
+    "absorbency": 4,
+    "appearance": 3,
+    "date": "2025-06-14",
     "description": "These napkins were high quality but hard to get ahold of!",
-    "durability": null,
-    "effectiveness": null,
-    "imageUrl": null,
+    "durability": 5,
+    "effectiveness": 3,
+    "imageUrl": "https://cdn.sanity.io/images/c1ywbxqh/production/b0d99368bf3fde9f61ace0c026ff0c5cfc6c375c-607x505.webp",
     "location": "https://www.google.com/maps/place/Paragon+Theaters+-+Fenton+%2B+Axis15+Extreme/@35.7815984,-78.7698752,15z/data=!4m6!3m5!1s0x89acf3f9a1cbf7cf:0xd9003b799d2228ef!8m2!3d35.7815981!4d-78.759576!16s%2Fg%2F11qbcr7w3t!5m1!1e2?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D",
     "name": "Paragon Theater Cary",
-    "notes": null,
-    "size": null,
-    "texture": null
-  },
-  {
-    "absorbency": 2,
-    "appearance": 1,
-    "date": "2025-06-06",
-    "description": "sfsf. akjbnwe.",
-    "durability": 3,
-    "effectiveness": 3,
-    "imageUrl": "https://cdn.sanity.io/images/c1ywbxqh/production/4aa471d3c346add564d5eaa11b652e44de4076ee-336x297.png",
-    "location": "https://maps.app.goo.gl/o9RWvygRVQxyBPJp7",
-    "name": "Test 1",
-    "notes": "bwgvbe notes",
+    "notes": "Additional notes?",
     "size": 5,
-    "texture": 5
+    "texture": 4
   }
 ]
