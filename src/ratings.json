@@ -28,20 +28,5 @@
     "ratingId": "xj1x4",
     "size": 5,
     "texture": 4
-  },
-  {
-    "absorbency": 2,
-    "appearance": 2,
-    "date": "2025-06-14",
-    "description": "Upon my most recent visit to see the Durham Bulls baseball game I had the chance to use and examine the standard concession stand napkin. Let’s talk about it that for a brief moment. It was ‘not great.’ In fact the only interesting thing about it was the texture, it seemed to have a beaded feel to it that may lead the user to believe that it could wipe away mustard and ketchup. Don’t be fooled, it would remove some goop from your hands but likely leave a layer behind you can smell long after the game is over. It was, however, better than nothing. So there’s that. The best part of the experience was that they won! Two home runs and a final score of Durham 3 and Charlotte 1.",
-    "durability": 2,
-    "effectiveness": 1,
-    "imageUrl": "https://cdn.sanity.io/images/c1ywbxqh/production/cdafa3af783a2a7c4cbe12d166b59ef7dbc250d1-4284x5712.jpg",
-    "location": "https://www.google.com/maps/place/Durham+Bulls+Athletic+Park,+409+Blackwell+St,+Durham,+NC+27701/@35.991542,-78.9049079,17z/data=!4m6!3m5!1s0x89ace46c9b224cef:0xe914be78d7e7e3d!8m2!3d35.991542!4d-78.9049079!16zL20vMDV2OG15?g_ep=Eg1tbF8yMDI1MDYxMV8wIJvbDyoASAJQAg%3D%3D",
-    "name": "Durham Bulls Athletic Park",
-    "notes": null,
-    "ratingId": "e7tn4",
-    "size": 1,
-    "texture": 3
   }
 ]
