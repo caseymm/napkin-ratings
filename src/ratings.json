@@ -13,5 +13,20 @@
     "ratingId": "xj1x4",
     "size": 5,
     "texture": 4
+  },
+  {
+    "absorbency": null,
+    "appearance": null,
+    "date": null,
+    "description": "Upon my most recent visit to see the Durham Bulls baseball game I had the chance to use and examine ",
+    "durability": null,
+    "effectiveness": null,
+    "imageUrl": null,
+    "location": "https://www.google.com/maps/place/Durham+Bulls+Athletic+Park,+409+Blackwell+St,+Durham,+NC+27701/@35.991542,-78.9049079,17z/data=!4m6!3m5!1s0x89ace46c9b224cef:0xe914be78d7e7e3d!8m2!3d35.991542!4d-78.9049079!16zL20vMDV2OG15?g_ep=Eg1tbF8yMDI1MDYxMV8wIJvbDyoASAJQAg%3D%3D",
+    "name": "Durham Bulls Athletic Park",
+    "notes": null,
+    "ratingId": "e7tn4",
+    "size": null,
+    "texture": null
   }
 ]
