@@ -36,6 +36,7 @@ const query = `*[_type == "rating"]{
 async function fetchAndSave() {
   try {
     const ratings = await client.fetch(query);
+    console.log("ratings: ", ratings.length);
     const filePath = path.join(__dirname, "..", "src", "ratings.json");
 
     // Create data dir if missing
