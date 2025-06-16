@@ -7,6 +7,7 @@ import "./index.scss";
 
 import App from "./App.jsx";
 import Map from "./map.jsx";
+import AdminPanel from "./Admin.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")).render(
           }
         />
         <Route path="/map" element={<Map />} />
+        <Route path="/admin/*" element={<AdminPanel />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
