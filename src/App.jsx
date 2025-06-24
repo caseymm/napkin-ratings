@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import "./App.scss";
 import dayjs from "dayjs";
-import data from "./ratings.json";
 
-function App() {
+function App({ data }) {
   const attributes = [
     "durability",
     "absorbency",
