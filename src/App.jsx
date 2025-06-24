@@ -56,16 +56,24 @@ function App({ data }) {
       {/* ☆✩⭑⭒⭐︎ */}
       <div className="list">
         {data.map((item, i) => (
-          <div key={i} className="card">
-            <p>
-              <a href={item.location}>{item.name}</a>
-            </p>
-            <p>{dayjs(item.date).format("MMMM D, YYYY")}</p>
-            <OverallStars item={item} />
-            <hr></hr>
-            <StarRatings item={item} />
-            <p>{item.description}</p>
-            <img src={item.imageUrl} />
+          <div className="card-border">
+            <div key={i} className="card">
+              <div
+                className="card-header"
+                style={{ backgroundImage: `url(${item.imageUrl})` }}
+              >
+                <div className="text-block">
+                  <p>
+                    <a href={item.location}>{item.name}</a>
+                  </p>
+                  <p>{dayjs(item.date).format("MMMM D, YYYY")}</p>
+                  <OverallStars item={item} />
+                </div>
+              </div>
+
+              <StarRatings item={item} />
+              <p className="description">{item.description}</p>
+            </div>
           </div>
         ))}
       </div>

@@ -29,7 +29,8 @@ h3 {
 
 .app-list {
   width: calc(100% - 60px);
-  padding-left: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .list {
@@ -39,12 +40,40 @@ h3 {
   p {
     margin: 7px 0 3px;
   }
-  .card {
-    width: 100%;
-    max-width: 300px;
+
+  .card-border {
+    // border: 8px solid #ff0080;
+    // border-radius: 10px;
     margin-bottom: 40px;
+  }
+
+  .card {
+    // width: calc(100% - 40px);
+    // margin: 20px auto;
+    width: 100%;
+    margin: 20px auto;
+
     @media only screen and (max-width: 500px) {
       max-width: 100%;
+    }
+    .card-header {
+      position: relative;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
+      margin-bottom: 10px;
+      .text-block {
+        background-color: #000;
+        color: #fff;
+        display: inline-block;
+        padding: 0 7px 5px;
+        margin: -15px 0 0 -10px;
+        // border: 1px #646cff solid;
+        line-height: 1;
+        a {
+          color: #fff;
+        }
+      }
     }
     .sublist {
       display: flex;
@@ -54,6 +83,9 @@ h3 {
     img {
       margin-top: 20px;
       max-width: 100%;
+    }
+    .description {
+      margin-top: 20px;
     }
   }
 }
